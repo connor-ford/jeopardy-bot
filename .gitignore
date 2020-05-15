@@ -129,4 +129,5 @@ dmypy.json
 .pyre/
 
 generated
+current_question.json
 twitter_keys.json
