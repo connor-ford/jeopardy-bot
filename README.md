@@ -26,9 +26,9 @@ It will then send out this image as a Tweet, with some added information, like t
 Then, the cycle will repeat itself.
 
 ## Usage
-This bot relies on Pillow to create the images, and Tweepy to send them. Install them with:
+This bot relies the Tweepy, Pillow, and pytz libraries. Install them with:
 ```bash
-pip install Pillow, Tweepy
+pip install Tweepy, Pillow, pytz
 ```
 Make sure to fill out your Twitter credentials in the twitter_keys.json file.
 After that, you can run the bot using:
