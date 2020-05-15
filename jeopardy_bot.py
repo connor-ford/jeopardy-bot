@@ -75,11 +75,13 @@ while True:
     if not last_tweet['in_reply_to_status_id']:
         print('-----')
         print('Last Tweet was not a Retweet.')
+
+        status = 'Answer: ' + current_question['answer'] + '. Follow @bot_jeopardy_ for more!'
+
+        print('Status: ' + status)
         print('Retweeting last Tweet...', end='')
         t_response = tweet(
-            'Answer: ' + 
-            current_question['answer'] + 
-            '. Follow @bot_jeopardy_ for more!',
+            status,
             id=last_tweet['id_str']
         )
         if t_response is not None:
