@@ -28,7 +28,7 @@ Then, the cycle will repeat itself.
 ## Usage
 This bot relies the Tweepy, Pillow, and pytz libraries. Install them with:
 ```bash
-pip install Tweepy, Pillow, pytz
+pip install Tweepy Pillow pytz
 ```
 Make sure to fill out your Twitter credentials in the twitter_keys.json file.
 After that, you can run the bot using:
