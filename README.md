@@ -10,10 +10,12 @@ The bot will authenticate itself with Twitter using the credentials in twitter_k
 
 Then, the bot will start an indefinite loop as follows:
 
+The bot will determine if a long enough time has elapsed since the last Tweet (as configured by cooldown in config.json). 
+If it hasn't, the bot will wait until the cooldown has finished.
+
 The bot will check if the most recent Tweet was a Retweet or not.
 
-If it wasn't a Retweet, the bot will determine if a long enough time has elapsed since the last Tweet (as configured by cooldown in config.json). If it hasn't, the bot will wait until the cooldown has finished.
-It will then Retweet the most recent Tweet with the most recent answer, and continue to the next cycle.
+If it wasn't a Retweet it will then Retweet the most recent Tweet with the most recent answer, and continue to the next cycle.
 
 If it was a Retweet, the bot will call the jService API for a new Jeopardy! question.
 
@@ -35,4 +37,4 @@ python3 jeopardy_bot.py
 ```
 
 ## Contribution
-I am always open to new ideas and suggestions. Feel free to create a PR, or contact be at connor.ford2022@gmail.com.
+I am always open to new ideas and suggestions. Feel free to create a PR, or contact me at connor.ford2022@gmail.com.
