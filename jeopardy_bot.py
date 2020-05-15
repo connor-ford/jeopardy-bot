@@ -64,12 +64,9 @@ while True:
 
     # If it has not been enough time since last tweet, wait.
     if delta < cooldown:
-        while delta < cooldown:
-            remaining = cooldown - delta
-            print('\rWaiting %s more seconds to continue...' %(remaining), end='')
-            sleep(1)
-            delta += 1
-        print('Done.')
+        remaining = cooldown - delta
+        print('Waiting %s more seconds to continue.' %(remaining))
+        sleep(remaining)
 
     # If last Tweet wasn't a Retweet
     if not last_tweet['in_reply_to_status_id']:
