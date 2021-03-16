@@ -1,16 +1,19 @@
 # jeopardy-bot
+
 A Twitter bot that Tweets images of Jeopardy! questions, then answers them after a short period.
 
 ## APIs Used:
+
 [jService API](https://jservice.io), for getting a random Jeopardy! question, along with its answer, category, value, and air date.  
 [Twitter API](https://developer.twitter.com/en/docs), for posting statuses (Tweets/Retweets), and for accessing information about the bot's home timeline.
 
 ## How it works
+
 The bot will authenticate itself with Twitter using the credentials in twitter_keys.json.
 
 Then, the bot will start an indefinite loop as follows:
 
-The bot will determine if a long enough time has elapsed since the last Tweet (as configured by cooldown in config.json). 
+The bot will determine if a long enough time has elapsed since the last Tweet (as configured by cooldown in config.json).
 If it hasn't, the bot will wait until the cooldown has finished.
 
 The bot will check if the most recent Tweet was a Retweet or not.
@@ -26,15 +29,26 @@ It will then send out this image as a Tweet, with some added information, like t
 Then, the cycle will repeat itself.
 
 ## Usage
-This bot relies the Tweepy, Pillow, and pytz libraries. Install them with:
+
+Initialize the bot using:
+
 ```bash
-pip install Tweepy Pillow pytz
+. setup
 ```
+
+After setup, the virtual environment can be accessed by using:
+
+```bash
+. ve
+```
+
 Make sure to fill out your Twitter credentials in the twitter_keys.json file.
 After that, you can run the bot using:
+
 ```bash
-python3 jeopardy_bot.py
+. run
 ```
 
 ## Contribution
+
 I am always open to new ideas and suggestions. Feel free to create a PR, or contact me at connor.ford2022@gmail.com.
