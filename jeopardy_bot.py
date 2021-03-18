@@ -1,16 +1,12 @@
 import os.path
 import json
 import pytz
+import config
 from datetime import datetime
 from time import sleep
 from image_creator import create_image
 from jservice_api import get_question
 from twitter_api import authenticate, tweet, get_last_tweet
-
-with open("config.json") as f:
-    config = json.load(f)
-    # Cooldown is stored as minutes, used as seconds.
-    cooldown = config["cooldown"] * 60
 
 print("-----")
 print(
@@ -69,8 +65,8 @@ while True:
     print("The last Tweet was posted %s seconds ago." % (delta))
 
     # If it has not been enough time since last tweet, wait.
-    if delta < cooldown:
-        remaining = cooldown - delta
+    if delta < config.cooldown:
+        remaining = config.cooldown - delta
         print("Waiting %s more seconds to continue." % (remaining))
         sleep(remaining)
 
@@ -157,7 +153,7 @@ while True:
         + airdate.strftime("%b %d, %Y")
         + ". Category: "
         + current_question["category"].upper()
-        + "."
+        + ". #jeopardybot"
     )
 
     # Send status with image
