@@ -80,9 +80,9 @@ while True:
         print("Last Tweet was not a Retweet.")
 
         status = (
-            "Answer: "
+            "What is "
             + current_question["answer"]
-            + ". Follow @bot_jeopardy_ for more!"
+            + "? Follow @bot_jeopardy_ for more!"
         )
 
         print("Status: " + status)
