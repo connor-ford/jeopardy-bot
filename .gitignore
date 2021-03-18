@@ -4,8 +4,5 @@ __pycache__
 # Environments
 .venv
 
-# Generated Images
-generated/*
-
 # VSCode
 .vscode
