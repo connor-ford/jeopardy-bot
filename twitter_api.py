@@ -1,12 +1,5 @@
-import tweepy, json
-
-# Credentials
-with open('twitter_keys.json') as f:
-  keys = json.load(f)
-  consumer_key = keys['consumer_key']
-  consumer_secret = keys['consumer_secret']
-  access_token = keys['access_token']
-  access_secret = keys['access_secret']
+import tweepy
+import json
 
 # Establishes connection with API
 def authenticate():
@@ -14,12 +7,15 @@ def authenticate():
     global api
 
     try:
-        auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-        auth.set_access_token(access_token, access_secret)
+        with open("twitter_keys.json") as f:
+            keys = json.load(f)
+            auth = tweepy.OAuthHandler(keys["consumer_key"], keys["consumer_secret"])
+            auth.set_access_token(keys["access_token"], keys["access_secret"])
         api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
         return True
     except tweepy.TweepError:
         return False
+
 
 # POSTS a status with a specified image
 def tweet(status, image_path=None, id=None):
@@ -32,6 +28,7 @@ def tweet(status, image_path=None, id=None):
     except tweepy.TweepError as e:
         print(e)
         return None
+
 
 # Gets last tweet in Home Timeline (not updated live)
 def get_last_tweet():
