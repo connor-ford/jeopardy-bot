@@ -1,6 +1,7 @@
 import config
 import json
 import tweepy
+from config import CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_SECRET
 
 # Establishes connection with API
 def authenticate():
@@ -8,8 +9,8 @@ def authenticate():
     global api
 
     try:
-        auth = tweepy.OAuthHandler(config.consumer_key, config.consumer_secret)
-        auth.set_access_token(config.access_token, config.access_secret)
+        auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+        auth.set_access_token(ACCESS_TOKEN, ACCESS_SECRET)
         api = tweepy.API(auth, parser=tweepy.parsers.JSONParser())
         return True
     except tweepy.TweepError:
