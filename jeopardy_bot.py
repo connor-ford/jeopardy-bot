@@ -20,7 +20,7 @@ logger.setLevel(logging.DEBUG)
 # File
 if LOG_LEVEL_FILE:
     fileHandler = TimedRotatingFileHandler(
-        "logs/random_discord_bot.log", when="midnight", interval=1
+        "logs/jeopardy_bot.log", when="midnight", interval=1
     )
     fileHandler.setFormatter(formatter)
     fileHandler.setLevel(LOG_LEVEL_FILE)
