@@ -33,20 +33,20 @@ Then, the cycle will repeat itself.
 Initialize the bot using:
 
 ```bash
-$ source setup
+source setup
 ```
 
 After setup, the virtual environment can be accessed by using:
 
 ```bash
-$ source ve
+source ve
 ```
 
 Make sure to fill out your Twitter credentials in the config.py file, as well as how long the bot should wait between tweets/retweets. These parameters can also be passed as environment variables.
 After that, you can run the bot using:
 
 ```bash
-$ source run
+source run
 ```
 
 ## Contribution
