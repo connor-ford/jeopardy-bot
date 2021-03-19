@@ -14,7 +14,7 @@ def create_image(current_question, image_path):
 
     # Category
     category_lines = textwrap.wrap(current_question["category"], width=20)
-    category_formatted = category_lines[0] + "" if len(category_lines) == 1 else "..."
+    category_formatted = category_lines[0] + ("" if len(category_lines) == 1 else "...")
     shadow_text(d, 50, 20, category_formatted.upper(), swiss, 255, 255, 255)
 
     # Value
