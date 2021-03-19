@@ -97,7 +97,7 @@ while True:
             + "? Follow @bot_jeopardy_ for more!"
         )
 
-        logger.debug(f"Status: {status}")
+        logger.info(f"Status: {status}")
         logger.info("Retweeting last Tweet...")
         t_response = tweet(status, id=last_tweet["id_str"])
         if t_response is not None:
@@ -128,14 +128,14 @@ while True:
     current_question["category"] = j_response[0]["category"]["title"]
     current_question["value"] = str(j_response[0]["value"])
 
-    logger.debug(f"Question: {current_question['question']}")
-    logger.debug(f"Answer: {current_question['answer']}")
-    logger.debug(f"Category: {current_question['category']}")
-    logger.debug(f"Value: {current_question['value']}")
-    logger.debug(f"Date Aired: {airdate.strftime('%Y-%m-%d')}")
-
     # Airdate as datetime
     airdate = datetime.strptime(j_response[0]["airdate"], "%Y-%m-%dT%H:%M:%S.%fZ")
+
+    logger.info(f"Question: {current_question['question']}")
+    logger.info(f"Answer: {current_question['answer']}")
+    logger.info(f"Category: {current_question['category']}")
+    logger.info(f"Value: {current_question['value']}")
+    logger.info(f"Date Aired: {airdate.strftime('%Y-%m-%d')}")
 
     # Write to current_question.json
     logger.info("Saving current question to file...")
@@ -154,7 +154,7 @@ while True:
     # If it exists
     if os.path.isfile(image_path):
         logger.info("Successfully converted question into image.")
-        logger.debug("Image Path: " + image_path)
+        logger.info("Image Path: " + image_path)
     else:
         logger.error("Failed to convert question into image.")
         exit()
@@ -169,7 +169,7 @@ while True:
     )
 
     # Send status with image
-    logger.debug(f"Status: {status}")
+    logger.info(f"Status: {status}")
     logger.info("Posting Tweet...")
     t_response = tweet(status, image_path=image_path)
     if t_response is not None:
