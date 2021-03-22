@@ -3,6 +3,7 @@ import logging
 import os.path
 import sys
 import pytz
+import re
 import config
 from datetime import datetime
 from logging.handlers import TimedRotatingFileHandler
@@ -124,7 +125,7 @@ while True:
 
     # Save as current question
     current_question["question"] = j_response[0]["question"]
-    current_question["answer"] = j_response[0]["answer"]
+    current_question["answer"] = re.sub("<.*?>", "", j_response[0]["answer"])
     current_question["category"] = j_response[0]["category"]["title"]
     current_question["value"] = str(j_response[0]["value"])
 
