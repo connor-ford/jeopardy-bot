@@ -2,6 +2,8 @@
 
 A Twitter bot that Tweets images of Jeopardy! questions, then answers them after a short period.
 
+You can find an example of it running [here](https://twitter.com/bot_jeopardy_).
+
 ## APIs Used
 
 [jService API](https://jservice.io), for getting a random Jeopardy! question, along with its answer, category, value, and air date.  
